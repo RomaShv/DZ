@@ -1,3 +1,4 @@
+package dz1;
 import java.io.*;
 
 public class DZ1 {
