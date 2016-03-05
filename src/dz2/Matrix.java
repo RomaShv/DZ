@@ -37,7 +37,7 @@ public class Matrix {
 	 * Сложение матриц
 	 */
 	public Matrix sum(Matrix x) {
-		if (!this.isSizeEqual(x)) {
+		if (m != x.m || n != x.n) {
 			throw new RuntimeException("Размеры матриц должны совпадать!");
 		}
 
@@ -57,7 +57,7 @@ public class Matrix {
 	 * Вычитание матриц
 	 */
 	public Matrix sub(Matrix x) {
-		if (!this.isSizeEqual(x)) {
+		if (m != x.m || n != x.n) {
 			throw new RuntimeException("Размеры матриц должны совпадать!");
 		}
 
@@ -204,21 +204,4 @@ public class Matrix {
 		return elts;
 	}
 
-	/*
-	 * Проверим равенство размеров матриц
-	 */
-	private boolean isSizeEqual(Matrix x) {
-		if (x == this)
-			return true;
-
-		if (x == null)
-			return false;
-
-		if (m == x.m && n == x.n) {
-			return true;
-		} else {
-			return false;
-		}
-
-	}
 }
