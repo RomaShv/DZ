@@ -16,11 +16,11 @@ public abstract class Automobile {
 	/*
 	 * Проверка на превышение скорости
 	 */
-	public int checkSpeedPenalty() throws ExceededMaximumSpeed {
+	public int checkSpeedPenalty() throws ExceededMaxSpeedException {
 		int diff;
 		
 		if (this.speed >= Const.MAXSPEEDHARD) {
-			throw new ExceededMaximumSpeed();
+			throw new ExceededMaxSpeedException();
 		}
 
 		// ВОПРОС:
@@ -46,9 +46,9 @@ public abstract class Automobile {
 	/*
 	 * Проверка на превышение допустимых размеров
 	 */
-	public int checkSizeLimits() throws ExceededMaximumHeight {
+	public int checkSizeLimits() throws ExceededMaxHeightException {
 		if(this.height > Const.MAXHEIGHT) {
-			throw new ExceededMaximumHeight();
+			throw new ExceededMaxHeightException();
 		}
 		
 		return 0;
@@ -57,7 +57,7 @@ public abstract class Automobile {
 	/*
 	 * Расчет стоимости проезда
 	 */
-	public abstract int getFare() throws ExceededMaximumSpeed, ExceededMaximumHeight;
+	public abstract int getFare() throws ExceededMaxSpeedException, ExceededMaxHeightException;
 	
 	/*
 	 * (non-Javadoc)

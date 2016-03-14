@@ -16,9 +16,9 @@ public class DZ3 {
 				try {
 					System.out.println("Плата за проезд: " + t.getFare());
 					System.out.println(t.fareInfo);
-				} catch (ExceededMaximumSpeed e) {
+				} catch (ExceededMaxSpeedException e) {
 					System.out.println("Превышена максимальная скорость! Вызван патруль ГИБДД");
-				} catch (ExceededMaximumHeight e) {
+				} catch (ExceededMaxHeightException e) {
 					System.out.println("Превышена максимальная высота!");
 				}
 			}

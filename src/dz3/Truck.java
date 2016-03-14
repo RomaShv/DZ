@@ -17,7 +17,7 @@ public class Truck extends Automobile {
 	/*
 	 * Расчет стоимости проезда
 	 */
-	public int getFare() throws ExceededMaximumSpeed, ExceededMaximumHeight {
+	public int getFare() throws ExceededMaxSpeedException, ExceededMaxHeightException {
 		checkSizeLimits();
 
 		this.fareInfo += "- стоимость проезда: " + Const.TRUCKFARE + "\n";
